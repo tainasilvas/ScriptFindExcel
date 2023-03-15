@@ -1,0 +1,29 @@
+import requests
+import pandas as pd
+import datetime, re,time
+from datetime import date
+import numpy as np
+import json,unidecode
+import matplotlib.pyplot as plt
+from pyhive import presto,trino
+import pandas as pd
+import getpass
+import random
+
+pd.set_option('display.max_columns', None)
+
+df_planExcel = pd.read_excel('atendimentos.xlsx')
+
+Id = str(input("Qual o atendente deseja monitorar?  \n"))
+pesquisa = Id
+
+df_monitoria = df_planExcel.loc[(df_planExcel['Id'] == pesquisa)]
+
+df_monitoria.reset_index(inplace=True)
+
+x = random.randint(0,len(df_monitoria))
+
+filtered_df = df_monitoria[(df.monitoria.index == x)]
+
+print('\n')
+print(filtered_df)
